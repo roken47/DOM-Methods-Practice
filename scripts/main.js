@@ -1,49 +1,50 @@
-const mainEl = document.createElement("main");
-const imgEl = document.createElement("img");
-const aEl = document.createElement("a");
-const rmBtnEl_main = document.createElement("button");
+const main = document.createElement("main");
+const image = document.createElement("img");
+const anchor = document.createElement("a");
+const removeMainButton = document.createElement("button");
+const body = document.body;
 
-document.body.appendChild(mainEl);
-imgEl.src =
+body.appendChild(main);
+image.src =
   "https://images.unsplash.com/photo-1495627009230-9e30e647c7cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80";
-imgEl.className = "image";
-mainEl.appendChild(imgEl);
-aEl.href =
+image.className = "image";
+main.appendChild(image);
+anchor.href =
   "https://images.unsplash.com/photo-1495627009230-9e30e647c7cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80";
-aEl.className = "link";
-aEl.innerHTML = "link to image";
-mainEl.appendChild(aEl);
-rmBtnEl_main.innerHTML = "Remove Main Node";
-document.body.appendChild(rmBtnEl_main);
-rmBtnEl_main.addEventListener("click", function () {
-  mainEl.remove();
+anchor.className = "link";
+anchor.innerHTML = "link to image";
+main.appendChild(anchor);
+removeMainButton.innerHTML = "Remove Main Node";
+body.appendChild(removeMainButton);
+removeMainButton.addEventListener("click", function () {
+  main.remove();
 });
 
 //Stretch Goals:
 // Remove by CSS Selector functionalities =>
-const inputEl_css = document.createElement("input");
-const rmBtnEl_css = document.createElement("button");
-rmBtnEl_css.innerHTML = "Remove CSS Selector";
-inputEl_css.placeholder = "Remove CSS Selector";
-document.body.appendChild(inputEl_css);
-document.body.appendChild(rmBtnEl_css);
-rmBtnEl_css.addEventListener("click", function () {
-  let inputCss = document.querySelectorAll(inputEl_css.value);
-  inputCss.forEach(function (inputEl_css) {
-    inputEl_css.remove();
+const userInputSelector = document.createElement("input");
+const removeSelectorButton = document.createElement("button");
+removeSelectorButton.innerHTML = "Remove CSS Selector";
+userInputSelector.placeholder = "Remove CSS Selector";
+body.appendChild(userInputSelector);
+body.appendChild(removeSelectorButton);
+removeSelectorButton.addEventListener("click", function () {
+  let selectorArray = document.querySelectorAll(userInputSelector.value);
+  selectorArray.forEach(function (userInputSelector) {
+    userInputSelector.remove();
   });
 });
 // add DIV element to BODY and contain user inputted text
-const inputEl_text = document.createElement("input");
-inputEl_text.placeholder = "Add Text to Page";
-const addBtnEl_text = document.createElement("button");
-addBtnEl_text.innerHTML = "Add Text";
-document.body.appendChild(inputEl_text);
-document.body.appendChild(addBtnEl_text);
-addBtnEl_text.addEventListener("click", function () {
-  const divEl = document.createElement("div");
-  document.body.appendChild(divEl);
-  divEl.innerHTML = inputEl_text.value;
+const userInputText = document.createElement("input");
+userInputText.placeholder = "Add Text to Page";
+const addTextButton = document.createElement("button");
+addTextButton.innerHTML = "Add Text";
+body.appendChild(userInputText);
+body.appendChild(addTextButton);
+addTextButton.addEventListener("click", function () {
+  const div = document.createElement("div");
+  body.appendChild(div);
+  div.innerHTML = userInputText.value;
 });
 /* 
 Please comment on how I can make this more readable or even shorter. For example, Is "El" short for element to nearly all devs?
