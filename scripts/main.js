@@ -13,6 +13,7 @@ anchor.href =
   "https://images.unsplash.com/photo-1495627009230-9e30e647c7cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80";
 anchor.className = "link";
 anchor.innerHTML = "link to image";
+anchor.target = "_blank";
 main.appendChild(anchor);
 removeMainButton.innerHTML = "Remove Main Node";
 body.appendChild(removeMainButton);
